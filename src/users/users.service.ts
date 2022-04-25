@@ -12,14 +12,19 @@ export class UsersService {
   ) {
   }
 
-  async createUser(dto: CreateUserDto) {
+  async createUser(dto: CreateUserDto): Promise<User> {
     const user = await this.userRepository.create(dto);
     const role = await this.roleService.getRoleByValue("USER");
     await user.$set("roles", [role.id]);
+    user.roles = [role];
     return user;
   }
 
   async getAllUsers() {
     return this.userRepository.findAll({ include: { all: true } });
+  }
+
+  async getUserByEmail(email: string): Promise<User> {
+    return this.userRepository.findOne({ where: { email }, include: { all: true } });
   }
 }
