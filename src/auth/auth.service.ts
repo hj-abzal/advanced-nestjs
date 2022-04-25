@@ -20,8 +20,8 @@ export class AuthService {
   }
 
   async registration(userDto: CreateUserDto) {
-    const canditate = await this.userService.getUserByEmail(userDto.email);
-    if (canditate) {
+    const candidate = await this.userService.getUserByEmail(userDto.email);
+    if (candidate) {
       throw new HttpException("User with such email already exist", HttpStatus.BAD_REQUEST);
     }
     const hashPassword = await bcrypt.hash(userDto.password, 5);
