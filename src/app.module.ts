@@ -7,8 +7,8 @@ import { Role } from "./roles/roles.model";
 import { UserRoles } from "./roles/user-roles.model";
 import { RolesModule } from "./roles/roles.module";
 import { AuthModule } from "./auth/auth.module";
-import { PostsModule } from "./posts/posts.module";
-import { Posts } from "./posts/posts.model";
+import { PostsModule } from "./products/posts.module";
+import { Posts } from "./products/posts.model";
 import { FilesModule } from "./files/files.module";
 import { ServeStaticModule } from "@nestjs/serve-static";
 import * as path from "path";
@@ -25,11 +25,11 @@ import * as path from "path";
     }),
     SequelizeModule.forRoot({
       dialect: "postgres",
-      host: process.env.POSTGRES_HOST,
+      host: process.env.POSTGRES_HOST || "localhost",
       port: 5432,
-      username: process.env.POSTGRES_USER,
-      password: process.env.POSTGRES_PASSWORD,
-      database: process.env.POSTGRES_DB,
+      username: process.env.POSTGRES_USER || "postgres",
+      password: process.env.POSTGRES_PASSWORD || '7777',
+      database: process.env.POSTGRES_DB || 'business-app',
       ssl: false,
       models: [User, Role, UserRoles, Posts],
       autoLoadModels: true

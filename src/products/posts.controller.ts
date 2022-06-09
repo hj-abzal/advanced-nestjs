@@ -3,7 +3,7 @@ import { CreatePostDto } from "./dto/create-post.dto";
 import { PostsService } from "./posts.service";
 import { FileInterceptor } from "@nestjs/platform-express";
 
-@Controller("posts")
+@Controller("products")
 export class PostsController {
 
   constructor(

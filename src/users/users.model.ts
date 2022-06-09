@@ -2,7 +2,7 @@ import { BelongsToMany, Column, DataType, HasMany, Model, Table } from "sequeliz
 import { ApiProperty } from "@nestjs/swagger";
 import { Role } from "../roles/roles.model";
 import { UserRoles } from "../roles/user-roles.model";
-import { Posts } from "../posts/posts.model";
+import { Posts } from "../products/posts.model";
 
 interface UserCreationAttrs {
   email: string,
