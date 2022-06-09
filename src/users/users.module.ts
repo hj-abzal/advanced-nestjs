@@ -7,7 +7,7 @@ import { RolesModule } from "../roles/roles.module";
 import { AuthModule } from "../auth/auth.module";
 import { Role } from "../roles/roles.model";
 import { UserRoles } from "../roles/user-roles.model";
-import { Posts } from "../posts/posts.model";
+import { Posts } from "../products/posts.model";
 
 @Module({
   controllers: [UsersController],
