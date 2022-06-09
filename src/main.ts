@@ -23,6 +23,8 @@ async function bootstrap() {
 
 
 //main 1
+
+//f2
 }
 
 bootstrap();
